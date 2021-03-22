@@ -15,7 +15,7 @@ class SmallItem extends Component {
                   <h5 className="heading">
                       <a href="fds">{this.props.article.title}</a>
                   </h5>
-                  <p className="text-blue">Published: {this.props.article.publishedDate}</p>
+                  <p className="text-blue">Published: {this.props.article.publishedAt}</p>
               </div>
           </div>
       </Col>
