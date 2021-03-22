@@ -3,7 +3,8 @@ import React, { Component } from 'react'
 import {Row, Col, Container} from 'react-bootstrap'
 
 import BigItem from "./hero_items/BigItem"
-import SmallItem from "./hero_items/SmallItem"
+// import SmallItem from "./hero_items/SmallItem"
+import SubHeadline from "./hero_items/SubHeadline"
 
 class HomeHero extends Component {
   
@@ -15,10 +16,7 @@ class HomeHero extends Component {
                     <BigItem/>
                     <Col lg="6">
                         <Row className="h-100">
-                            <SmallItem/>
-                            <SmallItem/>
-                            <SmallItem/>
-                            <SmallItem/>
+                            <SubHeadline/>
                         </Row>
                     </Col>
                 </Row>
