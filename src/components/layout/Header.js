@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
-import {Navbar, Nav} from 'react-bootstrap'
-import { Container } from 'react-bootstrap';
+import {Container, Navbar, Nav} from 'react-bootstrap'
 
 import Logo from "../../images/logo.png"
 
@@ -35,6 +34,6 @@ class Header extends Component {
       )
     }
     
-  }
+}
   
   export default Header;
