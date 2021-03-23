@@ -20,14 +20,14 @@ class BigItem extends Component {
   componentDidMount() {
     axios
       .get(
-        'https://newsapi.org/v2/top-headlines?country=us&apiKey=1fc1824e40174167b4cfafb5a39ddb11'
+        'http://localhost:5000/api/v1/news/headline'
       )
       .then((response) => {
-        console.log(response.data.articles[0]);
+        console.log(response.data.data.articles);
         this.setState({
-          headLine: response.data.articles[0],
-          title: response.data.articles[0].title.substring(0, 60),
-          publishedAt: response.data.articles[0].publishedAt,
+          headLine: response.data.data.articles[0],
+          title: response.data.data.articles[0].title,
+          publishedAt: response.data.data.articles[0].publishedAt,
         });
       });
   }

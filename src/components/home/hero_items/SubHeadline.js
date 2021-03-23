@@ -13,12 +13,12 @@ export default class SubHeadline extends Component {
   componentDidMount() {
     axios
       .get(
-        'https://newsapi.org/v2/top-headlines?country=us&apiKey=1fc1824e40174167b4cfafb5a39ddb11'
+        'http://localhost:5000/api/v1/news/headline'
       )
       .then((response) => {
-        console.log(response.data.articles);
+        console.log(response.data.data.articles);
         this.setState({
-          headLine: response.data.articles.slice(1, 5),
+          headLine: response.data.data.articles.slice(1, 5),
         });
       });
   }
