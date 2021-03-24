@@ -43,6 +43,13 @@ img {
 .text-blue {
     color: #02afff;
 }
+.text-yellow {
+    color: #fff602;
+}
+hr {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
 /* header css */
 header {
     box-shadow: 0 8px 20px 0 rgb(0 0 0 / 10%);
@@ -86,7 +93,46 @@ header .nav-link.active {
     left: 0px;
     padding: 0 30px;
 }
-
+/* ****** all category tab area ******* */
+.all-cat-tab .nav-tabs .nav-item {
+    font-size: 20px;
+    font-weight: 600;
+}
+.all-cat-tab .news-text-in-img {
+    position: relative;
+}
+.all-cat-tab .news-text-in-img img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+}
+.all-cat-tab .news-text-in-img .news-overlay {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.205), rgba(0, 0, 0, 0.514));
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 30px;
+    display: flex;
+    align-items: flex-end;
+    transition: 0.3s;
+}
+.all-cat-tab .news-text-in-img .news-overlay:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.205), rgba(0, 0, 0, 0.596));
+}
+.all-cat-tab .news-text-in-img .news-overlay .heading a {
+    color: #fff !important;
+}
+.all-cat-tab .news-text-out-img img {
+    width: 240px;
+    height: 184px;
+}
+.all-cat-tab .share-icon .share-all-icon {
+    display: none;
+}
+.all-cat-tab .share-icon:hover .share-all-icon {
+    display: block;
+}
 
 
 /* responsive styles */
