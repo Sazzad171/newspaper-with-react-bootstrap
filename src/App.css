@@ -133,6 +133,9 @@ header .nav-link.active {
 .all-cat-tab .share-icon .share-all-icon a {
     color: #fff !important;
 }
+.all-cat-tab .share-icon svg {
+    font-size: 22px;
+}
 .all-cat-tab .share-icon:hover .share-all-icon {
     opacity: 1;
 }
