@@ -8,6 +8,18 @@ const router = express.Router();
 //route to get all newss
 router.get('/headline', newsController.getAllNewss);
 
+//route to get all buisness
+router.get('/buisness', newsController.getAllBuisness);
+
+//route to get all culture
+router.get('/culture', newsController.getAllCulture);
+
+//route to get all Politics
+router.get('/science', newsController.getAllScience);
+
+//route to get all Politics
+router.get('/sports', newsController.getAllSports);
+
 //route to create a new news
 router.post('', newsController.newNews);
 

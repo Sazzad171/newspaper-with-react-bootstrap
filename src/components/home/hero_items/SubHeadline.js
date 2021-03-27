@@ -28,8 +28,8 @@ export default class SubHeadline extends Component {
 
     return (
       <>
-        {headLine.map((item) => (
-          <SmallItem key={item.publishedAt} article={item}></SmallItem>
+        {headLine.map((item,index) => (
+          <SmallItem key={index} article={item}></SmallItem>
         ))}
       </>
     );

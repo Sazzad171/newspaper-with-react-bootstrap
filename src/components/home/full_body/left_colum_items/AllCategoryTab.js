@@ -18,7 +18,7 @@ class AllCategoryTab extends Component {
                 <Tab eventKey="culture" title="Culture">
                     <CultureTab/>
                 </Tab>
-                <Tab eventKey="politics" title="Politics">
+                <Tab eventKey="politics" title="Science">
                     <PoliticsTab/>
                 </Tab>
                 <Tab eventKey="sports" title="Sports">

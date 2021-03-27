@@ -21,6 +21,84 @@ export const getAllNewss = async (req, res, next) => {
 };
 
 /**
+ * Controller to get all newss available
+ * @param  {object} req - request object
+ * @param {object} res - response object
+ * @param {Function} next
+ */
+export const getAllBuisness = async (req, res, next) => {
+  try {
+    const data = await NewsService.getAllBuisness();
+    console.log(data);
+    res.status(HttpStatus.OK).json({
+      code: HttpStatus.OK,
+      data: data,
+      message: 'All news fetched successfully'
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+/**
+ * Controller to get all newss available
+ * @param  {object} req - request object
+ * @param {object} res - response object
+ * @param {Function} next
+ */
+export const getAllCulture = async (req, res, next) => {
+  try {
+    const data = await NewsService.getAllCulture();
+    console.log(data);
+    res.status(HttpStatus.OK).json({
+      code: HttpStatus.OK,
+      data: data,
+      message: 'All news fetched successfully'
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+/**
+ * Controller to get a single news
+ * @param  {object} req - request object
+ * @param {object} res - response object
+ * @param {Function} next
+ */
+export const getAllScience = async (req, res, next) => {
+  try {
+    const data = await NewsService.getAllScience();
+    res.status(HttpStatus.OK).json({
+      code: HttpStatus.OK,
+      data: data,
+      message: 'News fetched successfully'
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+/**
+ * Controller to get sports news
+ * @param  {object} req - request object
+ * @param {object} res - response object
+ * @param {Function} next
+ */
+export const getAllSports = async (req, res, next) => {
+  try {
+    const data = await NewsService.getAllSports();
+    res.status(HttpStatus.OK).json({
+      code: HttpStatus.OK,
+      data: data,
+      message: 'News fetched successfully'
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+/**
  * Controller to get a single news
  * @param  {object} req - request object
  * @param {object} res - response object
