@@ -14,6 +14,7 @@ class BigItem extends Component {
       headLine: [],
       title: '',
       publishedAt: '',
+      url:''
     };
   }
 
@@ -28,19 +29,20 @@ class BigItem extends Component {
           headLine: response.data.data.articles[0],
           title: response.data.data.articles[0].title,
           publishedAt: response.data.data.articles[0].publishedAt,
+          url:response.data.data.articles[0].url
         });
       });
   }
 
   render() {
-    const { headLine, publishedAt, title } = this.state;
+    const { headLine, publishedAt, title,url } = this.state;
     return (
       <Col lg="6" className="big-image mb-3">
         <Image src={headLine.urlToImage} alt="News One" fluid />
         <div className="news-overlay position-absolute">
           <div>
             <h2 className="heading">
-              <a href="gfd">{title}</a>
+              <a target="blank" href={url}>{title}</a>
             </h2>
             <p className="text-blue">
               Published: <Moment>{publishedAt}</Moment>

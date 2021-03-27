@@ -10,7 +10,7 @@ class SmallItem extends Component {
         <div className="news-overlay small-img position-absolute">
           <div>
             <h5 className="heading">
-              <a href="fds">{this.props.article.title.substring(0, 60)}</a>
+              <a target="blank" href={this.props.article.url}>{this.props.article.title.substring(0, 60)}</a>
             </h5>
             <p className="text-blue">
               Published: {this.props.article.publishedAt.split('T')[0]}
