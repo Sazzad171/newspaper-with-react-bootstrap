@@ -139,6 +139,65 @@ header .nav-link.active {
 .all-cat-tab .share-icon:hover .share-all-icon {
     opacity: 1;
 }
+/* ****** latest news area ***** */
+.latest-news-area .marquee {
+    position: relative;
+    box-sizing: border-box;
+    animation: marquee 15s linear infinite;
+}
+.latest-news-area .marquee:hover {
+    animation-play-state: paused;
+}
+/* Make it move! */
+@keyframes marquee {
+    0%   { top:   8em }
+    100% { top: -11em }
+}
+/* Make it look pretty */
+.marquee-area .marquee {
+	margin: 0;
+    line-height: 1.5em;
+}
+.marquee-area:before, .marquee-area::before,
+.marquee-area:after,  .marquee-area::after {
+    left: 0;
+    z-index: 1;
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    width: 100%; height: 2em;
+    background-image: linear-gradient(top, #FFF, rgba(255,255,255,0));
+}
+.marquee-area:after, .marquee-area::after {
+    bottom: 0;
+    transform: rotate(180deg);
+}
+.marquee-area:before, .marquee-area::before {
+    top: 0;
+}
+/* custom for latest news */
+.latest-news-area {
+    background: #D1D3D4;
+    padding: 1em;
+}
+.latest-news-area .marquee-area {
+    height: 400px;
+    overflow: hidden;
+}
+.latest-news-area .marquee-area .list-group {
+    border-radius: 0;
+}
+.latest-news-area .marquee-area .list-group-item {
+    background: #F1F1F2;
+    margin-bottom: 6px;
+}
+.latest-news-area .marquee-area .list-group-item .news-img {
+    width: 90px;
+    height: 90px;
+}
+.latest-news-area .marquee-area .list-group-item .media {
+    align-items: center;
+}
 
 
 /* responsive styles */
