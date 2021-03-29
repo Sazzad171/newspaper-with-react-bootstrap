@@ -32,9 +32,9 @@ class SportsTab extends Component {
                     <Image src={item.urlToImage} alt="News One" />
                     <div className="news-overlay position-absolute">
                       <div className="w-100">
-                        <h4 className="heading">
+                        <h5 className="heading">
                           <a href="gfd">{item.title}</a>
-                        </h4>
+                        </h5>
                         <Row>
                           <Col>
                             <p className="text-blue">
@@ -72,9 +72,9 @@ class SportsTab extends Component {
                         />
                       </a>
                       <Media.Body>
-                        <h5>
+                        <h6>
                           <a href="fds">{item.title}</a>
-                        </h5>
+                        </h6>
                         <p>{item.content.substring(0, 50)}</p>
                         <p className="text-blue">Published: {item.publishedAt}</p>
                       </Media.Body>
