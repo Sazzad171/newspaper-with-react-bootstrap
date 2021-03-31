@@ -6,6 +6,7 @@ import { Col, Image } from 'react-bootstrap';
 import axios from 'axios';
 import Moment from 'react-moment';
 import 'moment-timezone';
+import Skeleton from 'react-loading-skeleton';
 
 class BigItem extends Component {
   constructor(props) {
@@ -38,7 +39,8 @@ class BigItem extends Component {
     const { headLine, publishedAt, title,url } = this.state;
     return (
       <Col lg="6" className="big-image mb-3">
-        <Image src={headLine.urlToImage} alt="News One" fluid />
+        <Image src={headLine.urlToImage} alt="News One" fluid/>
+        <Skeleton width={400} height={200}/>
         <div className="news-overlay position-absolute">
           <div>
             <h2 className="heading">
