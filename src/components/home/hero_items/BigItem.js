@@ -45,7 +45,7 @@ class BigItem extends Component {
               <a target="blank" href={url}>{title}</a>
             </h2>
             <p className="text-blue">
-              Published: <Moment>{publishedAt}</Moment>
+              Published: <Moment fromNow>{publishedAt}</Moment>
             </p>
           </div>
         </div>

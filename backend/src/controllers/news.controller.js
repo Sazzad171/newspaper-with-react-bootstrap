@@ -97,6 +97,24 @@ export const getAllSports = async (req, res, next) => {
     next(error);
   }
 };
+/**
+ * Controller to get Technology news
+ * @param  {object} req - request object
+ * @param {object} res - response object
+ * @param {Function} next
+ */
+export const getAllTechnology = async (req, res, next) => {
+  try {
+    const data = await NewsService.getAllTechnology();
+    res.status(HttpStatus.OK).json({
+      code: HttpStatus.OK,
+      data: data,
+      message: 'News fetched successfully'
+    });
+  } catch (error) {
+    next(error);
+  }
+};
 
 /**
  * Controller to get a single news

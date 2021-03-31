@@ -1,71 +1,55 @@
 import React, { Component } from 'react';
 
 import { Media } from 'react-bootstrap';
+import axios from 'axios';
 
-import News from '../../../../images/news-2.jpg'
+import News from '../../../../images/news-2.jpg';
 
 class LatestNews extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      technology: [],
+    };
+  }
+  componentDidMount() {
+    axios
+      .get('http://localhost:5000/api/v1/news/technology')
+      .then((response) => {
+        console.log(response.data.data.articles);
+        this.setState({
+          technology: response.data.data.articles,
+        });
+      });
+  }
   render() {
+    const { technology } = this.state;
     return (
-        <div className="latest-news-area">
-          <h3>Latest News</h3>
-          <div class="marquee-area">
-              <div class="marquee">
-              <div class="list-group">
-                <a href="#" class="list-group-item">
+      <div className="latest-news-area">
+        <h3>Latest News</h3>
+        <div className="marquee-area">
+          <div className="marquee">
+            <div className="list-group">
+              {technology.map((item, index) => (
+                <a href="123" className="list-group-item">
                   <Media>
-                    <img className="mr-3 news-img" src={News} alt="Generic placeholder" />
-                      <Media.Body>
-                        <p className="mb-0">
-                          Dapibus ac facilisis in. Morbi leo risus.
-                        </p>
-                      </Media.Body>
+                    <img
+                      className="mr-3 news-img"
+                      src={item.urlToImage}
+                      alt="Generic placeholder"
+                    />
+                    <Media.Body>
+                      <p className="mb-0">
+                      {item.title}
+                      </p>
+                    </Media.Body>
                   </Media>
                 </a>
-                <a href="#" class="list-group-item">
-                  <Media>
-                    <img className="mr-3 news-img" src={News} alt="Generic placeholder" />
-                      <Media.Body>
-                        <p className="mb-0">
-                          Dapibus ac facilisis in. Morbi leo risus.
-                        </p>
-                      </Media.Body>
-                  </Media>
-                </a>
-                <a href="#" class="list-group-item">
-                  <Media>
-                    <img className="mr-3 news-img" src={News} alt="Generic placeholder" />
-                      <Media.Body>
-                        <p className="mb-0">
-                          Dapibus ac facilisis in. Morbi leo risus.
-                        </p>
-                      </Media.Body>
-                  </Media>
-                </a>
-                <a href="#" class="list-group-item">
-                  <Media>
-                    <img className="mr-3 news-img" src={News} alt="Generic placeholder" />
-                      <Media.Body>
-                        <p className="mb-0">
-                          Dapibus ac facilisis in. Morbi leo risus.
-                        </p>
-                      </Media.Body>
-                  </Media>
-                </a>
-                <a href="#" class="list-group-item">
-                  <Media>
-                    <img className="mr-3 news-img" src={News} alt="Generic placeholder" />
-                      <Media.Body>
-                        <p className="mb-0">
-                          Dapibus ac facilisis in. Morbi leo risus.
-                        </p>
-                      </Media.Body>
-                  </Media>
-                </a>
-              </div>
-              </div>
+              ))}
+            </div>
           </div>
         </div>
+      </div>
     );
   }
 }

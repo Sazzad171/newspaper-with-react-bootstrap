@@ -20,6 +20,9 @@ router.get('/science', newsController.getAllScience);
 //route to get all Politics
 router.get('/sports', newsController.getAllSports);
 
+//route to get all Politics
+router.get('/technology', newsController.getAllTechnology);
+
 //route to create a new news
 router.post('', newsController.newNews);
 
