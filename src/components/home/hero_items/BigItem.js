@@ -15,7 +15,8 @@ class BigItem extends Component {
       headLine: [],
       title: '',
       publishedAt: '',
-      url:''
+      url:'',
+      loading:true
     };
   }
 
@@ -30,17 +31,17 @@ class BigItem extends Component {
           headLine: response.data.data.articles[0],
           title: response.data.data.articles[0].title,
           publishedAt: response.data.data.articles[0].publishedAt,
-          url:response.data.data.articles[0].url
+          url:response.data.data.articles[0].url,
+          loading:false
         });
       });
   }
 
   render() {
-    const { headLine, publishedAt, title,url } = this.state;
+    const { headLine, publishedAt, title,url,loading } = this.state;
     return (
       <Col lg="6" className="big-image mb-3">
-        <Image src={headLine.urlToImage} alt="News One" fluid/>
-        <Skeleton width={400} height={200}/>
+        {loading ? <Skeleton width='100%' height={400}/> : <Image src={headLine.urlToImage} alt="News One" fluid/>}
         <div className="news-overlay position-absolute">
           <div>
             <h2 className="heading">

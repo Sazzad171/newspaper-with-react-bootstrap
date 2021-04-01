@@ -7,7 +7,8 @@ export default class SubHeadline extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      headLine: [],
+      headLine: ['1','2','3','4'],
+      loading:true
     };
   }
   componentDidMount() {
@@ -19,17 +20,18 @@ export default class SubHeadline extends Component {
         console.log(response.data.data.articles);
         this.setState({
           headLine: response.data.data.articles.slice(1, 5),
+          loading:false
         });
       });
   }
 
   render() {
-    const { headLine } = this.state;
+    const { headLine,loading } = this.state;
 
     return (
       <>
         {headLine.map((item,index) => (
-          <SmallItem key={index} article={item}></SmallItem>
+          <SmallItem key={index} article={item} loading={loading}></SmallItem>
         ))}
       </>
     );

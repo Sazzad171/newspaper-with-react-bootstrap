@@ -88,10 +88,10 @@ class BusinessTab extends Component {
                     </a>
                     <Media.Body>
                       <h6>
-                        <a href="fds">{item.title.substring(0,60)}</a>
+                        <a href="fds">{item.title}</a>
                       </h6>
                       <p>
-                       {item.content.substring(0,30)}
+                       {item.content}
                       </p>
                       <p className="text-blue">Published: {item.publishedAt}</p>
                     </Media.Body>
