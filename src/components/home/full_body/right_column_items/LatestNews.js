@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import { Media } from 'react-bootstrap';
 import axios from 'axios';
 
-import News from '../../../../images/news-2.jpg';
-
 class LatestNews extends Component {
   constructor(props) {
     super(props);
@@ -31,7 +29,7 @@ class LatestNews extends Component {
           <div className="marquee">
             <div className="list-group">
               {technology.map((item, index) => (
-                <a href="123" className="list-group-item">
+                <a href={item.url} key={index} target="blank" className="list-group-item">
                   <Media>
                     <img
                       className="mr-3 news-img"
