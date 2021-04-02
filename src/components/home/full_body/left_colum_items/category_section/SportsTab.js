@@ -4,6 +4,12 @@ import {  } from 'react-bootstrap';
 
 import { Row, Col, Image, Media } from 'react-bootstrap';
 import axios from 'axios';
+import {
+  FaShareAlt,
+  FaFacebookSquare,
+  FaTwitterSquare,
+  FaInstagram,
+} from 'react-icons/fa';
 
 
 class SportsTab extends Component {
@@ -42,14 +48,22 @@ class SportsTab extends Component {
                             </p>
                           </Col>
                           <Col>
-                            <div className="share-icon text-right">
-                              <span className="share-all-icon text-light">
-                                <a href="df"> fb </a>
-                                <a href="df"> twt </a>
-                                <a href="df"> insta </a>
-                              </span>
-                              <span className="text-yellow"> Share </span>
-                            </div>
+                          <div className="share-icon text-right">
+                           <span className="share-all-icon text-light">
+                             <a href="df" className="px-1">
+                               <FaFacebookSquare />
+                             </a>
+                             <a href="df" className="px-1">
+                               <FaTwitterSquare />
+                             </a>
+                             <a href="df" className="px-1">
+                               <FaInstagram />
+                             </a>
+                            </span>
+                           <span className="text-yellow">
+                             <FaShareAlt />
+                           </span>
+                         </div>
                           </Col>
                         </Row>
                       </div>

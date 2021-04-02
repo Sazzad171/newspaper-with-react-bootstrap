@@ -10,12 +10,15 @@ import {
 } from 'react-icons/fa';
 
 import axios from 'axios';
+import Skeleton from 'react-loading-skeleton';
+
 
 class BusinessTab extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      buisness: [],
+      buisness: ['1', '2'],
+      loading: true
     };
   }
   componentDidMount() {
@@ -27,18 +30,20 @@ class BusinessTab extends Component {
         console.log(response.data.data.articles);
         this.setState({
             buisness: response.data.data.articles,
+            loading: false
         });
       });
   }
   render() {
-    const { buisness } = this.state;
+    const { buisness, loading } = this.state;
+    console.log({loading});
     return (
-      <React.Fragment>
+      <>
         <Row className="pt-4">
           {  buisness.slice(1,3).map((item,index)=>(
                <Col lg="6" key={index} className="mb-3">
                <div className="news-text-in-img">
-                 <Image src={item.urlToImage} alt="News One" />
+                 { loading ? <Skeleton width='100%' height={300}/> : <Image src={item.urlToImage} alt="News One" /> }
                  <div className="news-overlay position-absolute">
                    <div className="w-100">
                      <h5 className="heading">
@@ -52,21 +57,17 @@ class BusinessTab extends Component {
                          <div className="share-icon text-right">
                            <span className="share-all-icon text-light">
                              <a href="df" className="px-1">
-                               {' '}
-                               <FaFacebookSquare />{' '}
+                               <FaFacebookSquare />
                              </a>
                              <a href="df" className="px-1">
-                               {' '}
-                               <FaTwitterSquare />{' '}
+                               <FaTwitterSquare />
                              </a>
                              <a href="df" className="px-1">
-                               {' '}
-                               <FaInstagram />{' '}
+                               <FaInstagram />
                              </a>
                            </span>
                            <span className="text-yellow">
-                             {' '}
-                             <FaShareAlt />{' '}
+                             <FaShareAlt />
                            </span>
                          </div>
                        </Col>
@@ -79,12 +80,12 @@ class BusinessTab extends Component {
           ))}
         </Row>
         <Row className="pb-4">
-            {buisness.slice(3,7).map((item,index)=>(
+            {buisness.slice(4,8).map((item,index)=>(
                 <Col lg="6" key={index}>
                 <div className="news-text-out-img">
                   <Media>
                     <a href="fd">
-                      <img className="mr-3" src={item.urlToImage} alt="Generic placeholder" />
+                      { loading ? <Skeleton width='100%' height={200}/> : <img className="mr-3" src={item.urlToImage} alt="Generic placeholder" /> }
                     </a>
                     <Media.Body>
                       <h6>
@@ -102,7 +103,7 @@ class BusinessTab extends Component {
             ))}
           
         </Row>
-      </React.Fragment>
+      </>
     );
   }
 }
