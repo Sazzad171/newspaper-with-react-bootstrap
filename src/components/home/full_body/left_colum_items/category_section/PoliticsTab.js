@@ -86,7 +86,7 @@ class PoliticsTab extends Component {
                     <h6>
                       <a href="fds">{item.title}</a>
                     </h6>
-                    <p>{item.content.substring(0, 50)}</p>
+                    <p>{item.content}</p>
                     <p className="text-blue">Published: {item.publishedAt}</p>
                   </Media.Body>
                 </Media>

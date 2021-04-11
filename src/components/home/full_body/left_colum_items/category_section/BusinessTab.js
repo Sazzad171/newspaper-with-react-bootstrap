@@ -17,7 +17,7 @@ class BusinessTab extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      buisness: ['1', '2'],
+      buisness: ['1', '2', '3'],
       loading: true
     };
   }
@@ -36,11 +36,10 @@ class BusinessTab extends Component {
   }
   render() {
     const { buisness, loading } = this.state;
-    console.log({loading});
     return (
       <>
         <Row className="pt-4">
-          {  buisness.slice(1,3).map((item,index)=>(
+          {  buisness.slice(1,3).map((item, index)=>(
                <Col lg="6" key={index} className="mb-3">
                <div className="news-text-in-img">
                  { loading ? <Skeleton width='100%' height={300}/> : <Image src={item.urlToImage} alt="News One" /> }
@@ -80,7 +79,7 @@ class BusinessTab extends Component {
           ))}
         </Row>
         <Row className="pb-4">
-            {buisness.slice(4,8).map((item,index)=>(
+            {buisness.slice(3, 7).map((item, index)=>(
                 <Col lg="6" key={index}>
                 <div className="news-text-out-img">
                   <Media>

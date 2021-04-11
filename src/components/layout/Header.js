@@ -4,28 +4,80 @@ import {Container, Navbar, Nav} from 'react-bootstrap'
 
 import Logo from "../../images/logo.png"
 
+import { Link } from "react-router-dom"
+
 class Header extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      navItems: [
+        {
+          id: 1,
+          name: 'Home',
+          link: '/'
+        },
+        {
+          id: 2,
+          name: 'Politics',
+          link: '/politics'
+        },
+        {
+          id: 3,
+          name: 'Business',
+          link: '/business'
+        },
+        {
+          id: 4,
+          name: 'Sports',
+          link: '/sports'
+        },
+        {
+          id: 5,
+          name: 'Culture',
+          link: '/culture'
+        },
+        {
+          id: 6,
+          name: 'World',
+          link: '/world'
+        },
+        {
+          id: 7,
+          name: 'About',
+          link: '/about'
+        },
+        {
+          id: 8,
+          name: 'Gallery',
+          link: '/gallery'
+        },
+        {
+          id: 9,
+          name: 'Contacts',
+          link: '/contacts'
+        }
+      ]
+    }
+  }
   
     render() {
+      const { navItems } = this.state;
       return (
         <header>
           <Container fluid>
             <Navbar expand="lg">
-              <Navbar.Brand href="#home">
+              <Link to="/" className="navbar-brand">
                 <img src={Logo} className="header-logo" alt="logo"/>
-              </Navbar.Brand>
+              </Link>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="ml-auto">
-                      <Nav.Link href="#">Home</Nav.Link>
-                      <Nav.Link href="#">Politics</Nav.Link>
-                      <Nav.Link href="#">Business</Nav.Link>
-                      <Nav.Link href="#">Sports</Nav.Link>
-                      <Nav.Link href="#">Culture</Nav.Link>
-                      <Nav.Link href="#">World</Nav.Link>
-                      <Nav.Link href="#">About</Nav.Link>
-                      <Nav.Link href="#">Gallery</Nav.Link>
-                      <Nav.Link href="#">Contacts</Nav.Link>
+                    {
+                      navItems.map( (item) => (
+                        <Link to={ item.link } key={ item.id } className="nav-link"> { item.name } </Link>
+                      ))
+                    }
                   </Nav>
               </Navbar.Collapse>
             </Navbar>

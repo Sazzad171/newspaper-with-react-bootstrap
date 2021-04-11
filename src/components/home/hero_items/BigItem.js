@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { Col, Image } from 'react-bootstrap';
 
+import { Link } from 'react-router-dom'
+
 // import NewsOne from "../../../images/news-1.jpg"
 import axios from 'axios';
 import Moment from 'react-moment';
@@ -31,21 +33,22 @@ class BigItem extends Component {
           headLine: response.data.data.articles[0],
           title: response.data.data.articles[0].title,
           publishedAt: response.data.data.articles[0].publishedAt,
-          url:response.data.data.articles[0].url,
           loading:false
         });
       });
   }
 
   render() {
-    const { headLine, publishedAt, title,url,loading } = this.state;
+    const { headLine, publishedAt, title ,loading } = this.state;
     return (
       <Col lg="6" className="big-image mb-3">
         {loading ? <Skeleton width='100%' height={400}/> : <Image src={headLine.urlToImage} alt="News One" fluid/>}
         <div className="news-overlay position-absolute">
           <div>
             <h2 className="heading">
-              <a target="blank" href={url}>{title}</a>
+              <Link to="/news-details">
+                {title}
+              </Link>
             </h2>
             <p className="text-blue">
               Published: <Moment fromNow>{publishedAt}</Moment>
