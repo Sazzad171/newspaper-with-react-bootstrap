@@ -96,7 +96,7 @@ class CultureTab extends Component {
                                      </a>
                                  </h6>
                                  <p>
-                                     {item.content.substring(0,50)}
+                                     {item.content}
                                  </p>
                                  <p className="text-blue">
                                      Published: {item.publishedAt}
