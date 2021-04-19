@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
 import HomeHero from './components/home/HomeHero';
 import FullBody from './components/home/FullBody';
 
@@ -14,8 +15,7 @@ import Business from './components/business-page/Business';
 import Sports from './components/sports-page/Sports';
 import Culture from './components/culture-page/Culture';
 import World from './components/world-page/World';
-import About from './components/about-page/About';
-import Gallery from './components/gallery-page/Gallery';
+import SearchResults from './components/search-page/SearchResults';
 import Contacts from './components/contacts-page/Contacts';
 
 export default class App extends Component {
@@ -37,9 +37,10 @@ export default class App extends Component {
           <Route path="/sports" component={ Sports }/>
           <Route path="/culture" component={ Culture }/>
           <Route path="/world" component={ World }/>
-          <Route path="/about" component={ About }/>
-          <Route path="/gallery" component={ Gallery }/>
           <Route path="/contacts" component={ Contacts }/>
+          <Route path="/search" component={ SearchResults }/>
+
+          <Footer/>
         </div>
       </Router>
     )

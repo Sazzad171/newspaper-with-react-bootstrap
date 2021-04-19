@@ -44,16 +44,6 @@ class Header extends Component {
         },
         {
           id: 7,
-          name: 'About',
-          link: '/about'
-        },
-        {
-          id: 8,
-          name: 'Gallery',
-          link: '/gallery'
-        },
-        {
-          id: 9,
           name: 'Contacts',
           link: '/contacts'
         }
@@ -72,12 +62,18 @@ class Header extends Component {
               </Link>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
-                  <Nav className="ml-auto">
+                  <Nav className="ml-auto align-items-center">
                     {
                       navItems.map( (item) => (
                         <Link to={ item.link } key={ item.id } className="nav-link"> { item.name } </Link>
                       ))
                     }
+                    <Link to="/search" className="nav-link">
+                      <div className="input-group">
+                        <input type="text" className="form-control" placeholder="Search..." aria-label="search" aria-describedby="basic-addon2"/>
+                        <span className="input-group-text bg-secondary text-light" id="basic-addon2">Search</span>
+                      </div>
+                    </Link>
                   </Nav>
               </Navbar.Collapse>
             </Navbar>
