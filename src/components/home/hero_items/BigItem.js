@@ -45,11 +45,11 @@ class BigItem extends Component {
         {loading ? <Skeleton width='100%' height={400}/> : <Image src={headLine.urlToImage} alt="News One" fluid/>}
         <div className="news-overlay position-absolute">
           <div>
-            <h2 className="heading">
-              <Link to="/news-details">
+            <h3 className="heading">
+              <Link to={ "/news?id=" }>
                 {title}
               </Link>
-            </h2>
+            </h3>
             <p className="text-blue">
               Published: <Moment fromNow>{publishedAt}</Moment>
             </p>

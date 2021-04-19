@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 import { Row, Col, Image, Media } from 'react-bootstrap';
 
@@ -45,9 +46,9 @@ class BusinessTab extends Component {
                  { loading ? <Skeleton width='100%' height={300}/> : <Image src={item.urlToImage} alt="News One" /> }
                  <div className="news-overlay position-absolute">
                    <div className="w-100">
-                     <h5 className="heading">
-                       <a href="gfd">{item.title}</a>
-                     </h5>
+                     <h6 className="heading">
+                       <Link to={ "/news?id=" }>{item.title}</Link>
+                     </h6>
                      <Row>
                        <Col>
                          <p className="text-blue">{item.publishedAt}</p>
@@ -83,15 +84,15 @@ class BusinessTab extends Component {
                 <Col lg="6" key={index}>
                 <div className="news-text-out-img">
                   <Media>
-                    <a href="fd">
+                    <Link to={ "/news?id=" }>
                       { loading ? <Skeleton width='100%' height={200}/> : <img className="mr-3" src={item.urlToImage} alt="Generic placeholder" /> }
-                    </a>
+                    </Link>
                     <Media.Body>
                       <h6>
-                        <a href="fds">{item.title}</a>
+                        <Link to={ "/news?id=" }>{item.title}</Link>
                       </h6>
                       <p>
-                       {item.content}
+                       {item.content && item.content.substring(0, 50)}
                       </p>
                       <p className="text-blue">Published: {item.publishedAt}</p>
                     </Media.Body>

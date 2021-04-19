@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 import { Media } from 'react-bootstrap';
 import axios from 'axios';
@@ -29,7 +30,7 @@ class LatestNews extends Component {
           <div className="marquee">
             <div className="list-group">
               {technology.map((item, index) => (
-                <a href={item.url} key={index} target="blank" className="list-group-item">
+                <Link to={ "/news?id=" } key={index} target="blank" className="list-group-item">
                   <Media>
                     <img
                       className="mr-3 news-img"
@@ -42,7 +43,7 @@ class LatestNews extends Component {
                       </p>
                     </Media.Body>
                   </Media>
-                </a>
+                </Link>
               ))}
             </div>
           </div>

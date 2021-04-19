@@ -31,7 +31,7 @@ export default class App extends Component {
             </>
           }/>
 
-          <Route path="/news-details" component={ NewsDetails }/>
+          <Route path="/news" component={ NewsDetails }/>
           <Route path="/politics" component={ Politics }/>
           <Route path="/business" component={ Business }/>
           <Route path="/sports" component={ Sports }/>
