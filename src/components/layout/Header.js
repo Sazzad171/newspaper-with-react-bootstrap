@@ -68,12 +68,12 @@ class Header extends Component {
                         <Link to={ item.link } key={ item.id } className="nav-link"> { item.name } </Link>
                       ))
                     }
-                    <Link to="/search" className="nav-link">
+                    <span className="nav-link">
                       <div className="input-group">
                         <input type="text" className="form-control" placeholder="Search..." aria-label="search" aria-describedby="basic-addon2"/>
                         <span className="input-group-text bg-secondary text-light" id="basic-addon2">Search</span>
                       </div>
-                    </Link>
+                    </span>
                   </Nav>
               </Navbar.Collapse>
             </Navbar>
