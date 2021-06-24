@@ -22,7 +22,7 @@ export default class App extends Component {
   render() {
     return (
       <Router>
-        <div className="">
+        <>
           <Header/>
           <Route exact path="/" render={ () =>
             <>
@@ -41,7 +41,7 @@ export default class App extends Component {
           <Route path="/search" component={ SearchResults }/>
 
           <Footer/>
-        </div>
+        </>
       </Router>
     )
   }
